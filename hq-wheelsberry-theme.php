@@ -1,7 +1,7 @@
 <?php
 /*
  * @package Wordpress HQ Rental Software
- * @version 1.2.0.0
+ * @version 0.0.1
  *
  *
 Plugin Name:  HQ Rental Wheelsberry Theme Integration
@@ -14,7 +14,7 @@ License URI: https://www.gnu.org/licenses/gpl.html
 */
 
 
-
+define('HQ_WHEELSBERRY_THEME_VERSION', '0.0.1');
 require_once('modules/init.php');
 
 

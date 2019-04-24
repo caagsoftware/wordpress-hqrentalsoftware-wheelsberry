@@ -155,7 +155,7 @@ function hq_wheels_home_slider_banner()
                                     <form action="/reservations/" method="post">
                                         <div class="reservation-form__line reservation-form__car">
                                             <div class="reservation-form__field-inner">
-                                                <select class="reservation-form__car-select" id="reservation-form__car-select" name="vehicle_class_id" >
+                                                <select class="reservation-form__car-select" id="reservation-form__car-select" name="vehicle_class_id">
                                                     <?php foreach ($vehicle_classes as $vehicle): ?>
                                                     <option value="<?php echo $vehicle->id; ?>"><?php echo $vehicle->name; ?></option>
                                                     <?php endforeach; ?>

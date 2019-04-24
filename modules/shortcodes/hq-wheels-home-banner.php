@@ -1,4 +1,6 @@
 <?php
+use HQRentalsPlugin\HQRentalsQueries\HQRentalsQueriesVehicleClasses;
+use HQRentalsPlugin\HQRentalsQueries\HQRentalsQueriesLocations;
 
 
 /*
@@ -6,8 +8,10 @@
  */
 function hq_wheels_home_slider_banner()
 {
-    $vehicle_classes = caag_hq_get_vehicle_classes_for_display();
-    $locations = caag_hq_get_locations_for_display();
+    $queryVehicles = new HQRentalsQueriesVehicleClasses();
+    $queryLocations = new HQRentalsQueriesLocations();
+    $vehicle_classes = $queryVehicles->allVehicleClasses();
+    $locations = $queryLocations->allLocations();
     if(isset($GLOBALS['omCarRentalPlugin'])) {
         global $post;
         $post_id = $post->ID;
@@ -152,7 +156,6 @@ function hq_wheels_home_slider_banner()
                                         <div class="reservation-form__line reservation-form__car">
                                             <div class="reservation-form__field-inner">
                                                 <select class="reservation-form__car-select" id="reservation-form__car-select" name="vehicle_class_id" >
-                                                    <option>Select Car</option>
                                                     <?php foreach ($vehicle_classes as $vehicle): ?>
                                                     <option value="<?php echo $vehicle->id; ?>"><?php echo $vehicle->name; ?></option>
                                                     <?php endforeach; ?>
